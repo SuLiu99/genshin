@@ -32,14 +32,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       
-    - name: Run1
+    - name: Run
       env:
-        Cookie: ${{secrets.Cookie1}}
+        Cookie: ${{secrets.Cookie}}
       run: dotnet run -p ./GenshinDailyHelper ${Cookie}
 
-    - name: Run2
-      env:
-        Cookie: ${{secrets.Cookie2}}
-      run: dotnet run -p ./GenshinDailyHelper ${Cookie}
-      
-      
